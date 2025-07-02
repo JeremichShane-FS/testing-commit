@@ -21,3 +21,5 @@ jobs:
           AUTO_P: "false"
           ISSUE_TEMPLATE: "{{ body }}\n\n---\n**File:** [{{ url }}]({{ url }})\n\n{{ snippet }}\n"
           AUTO_ASSIGN: "true"
+          PROJECT: "user/JeremichShane-FS/testing"
+          PROJECTS_SECRET: "${{ secrets.PROJECTS_SECRET }}"
