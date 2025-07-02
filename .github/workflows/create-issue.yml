@@ -28,6 +28,6 @@ jobs:
 
       - name: Debug file
         run: |
-          find . "*.js" -o -name "*.jsx" | head -10
+          find . -name "*.js" -o -name "*.jsx" | head -10
           echo "Found "TODO:"
           grep -n "TODO: " $(find . -name "*.js" -o "*.jsx" | head -1 || echo "No TODO found")
