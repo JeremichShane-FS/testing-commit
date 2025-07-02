@@ -1,0 +1,27 @@
+name: "Auto Issue Creation"
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  todo-to-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: "TODO to Issue"
+        uses: alstr/todo-to-issue-action@v5
+        with:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          CLOSE_ISSUES: "true"
+          AUTO_P: "false"
+          IDENTIFIERS: >
+            [
+              {"name": "TODO:", "labels": ["auto-generated", "type: enhancement"]},
+              {"name": "FIX:", "labels": ["auto-generated", "type: bug"]}
+            ]
+          ISSUE_TEMPLATE: "{{ body }}\n\n---\n**File:** [{{ url }}]({{ url }})\n\n{{ snippet }}\n"
