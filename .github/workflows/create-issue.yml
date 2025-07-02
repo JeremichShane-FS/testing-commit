@@ -19,9 +19,4 @@ jobs:
           REPO: ${{ github.repository }}
           CLOSE_ISSUES: "true"
           AUTO_P: "false"
-          IDENTIFIERS: >
-            [
-              {"name": "TODO:", "labels": ["auto-generated", "type: enhancement"]},
-              {"name": "FIX:", "labels": ["auto-generated", "type: bug"]}
-            ]
           ISSUE_TEMPLATE: "{{ body }}\n\n---\n**File:** [{{ url }}]({{ url }})\n\n{{ snippet }}\n"
