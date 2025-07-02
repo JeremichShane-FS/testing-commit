@@ -20,3 +20,4 @@ jobs:
           CLOSE_ISSUES: "true"
           AUTO_P: "false"
           ISSUE_TEMPLATE: "{{ body }}\n\n---\n**File:** [{{ url }}]({{ url }})\n\n{{ snippet }}\n"
+          AUTO_ASSIGN: "true"
